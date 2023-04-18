@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Speech Record</string>
+    <!-- tab copy-->
+    <string name="major_title_top_home">Record</string>
+    <string name="major_title_top_account">Account</string>
+
+
+    <!--Recording related-->
+    <string name="record_title">Speech Record</string>
+    <string name="record_warn">Please read and record the following text.</string>
+    <string name="record_stare">Start recording</string>
+    <string name="record_stop">Stop recording</string>
+    <string name="record_play">Play recording</string>
+    <string name="record_submit">Submit</string>
+    <string name="record_start_init">The microphone has not been initialized, please try again later</string>
+    <string name="record_start_filesize">Recording file size,startAudioSize: </string>
+    <string name="record_failed">Recording failed</string>
+    <string name="record_decode_failed">Recording decoding failed</string>
+    <string name="record_permission_warn">This app can only be used when the microphone permission is turned on</string>
+    <string name="record_permission_warn_again">Permission not given yet</string>
+    <string name="record_play_warn_text">Please stop recording first and play the recorded audio</string>
+
+    <!--account-->
+    <string name="account_login_warn">Please fill in username and password</string>
+    <string name="account_uploaded">Uploaded</string>
+    <string name="account_adopted">Adopted</string>
+    <string name="account_account">Phone</string>
+    <string name="account_logout">Logout</string>
+    <string name="account_login_welcome">Welcome to \nSpeech Record</string>
+    <string name="account_hint_account">Phone</string>
+    <string name="account_hint_password">Password</string>
+    <string name="account_login">Login</string>
+    <!--home-->
+    <string name="home_recording_list">Speech Record</string>
+    <string name="audio_recording_list">Audio</string>
+    <string name="home_recording_warn">Start Record</string>
+    <string name="home_recording_left">Waiting</string>
+    <string name="home_recording_right">Finished</string>
+
+    <string name="major_back_exit_tips">Press tap again to exit App</string>
+    <string name="major_create_audiofile">Please read and record the following text.</string>
+    <string name="major_already_warn_text">You have already read the text, do you want to record again?</string>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/all_btn_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        android:text="Login"
+        android:textAllCaps="false"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/common_dimen_30"
+            android:paddingRight="@dimen/common_dimen_30">
+
+
+            <TextView
+                android:id="@+id/welocome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_dimen_100"
+                android:text="@string/account_login_welcome"
+                android:textColor="#323232"
+                android:textSize="26sp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_edt_height"
+                android:layout_below="@+id/welocome"
+                android:layout_marginTop="@dimen/common_dimen_32"
+                android:background="@null"
+                android:hint="@string/account_hint_account"
+                android:inputType="number"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textColor="@color/common_323232"
+                android:textColorHint="@color/common_BCBDD0"
+                android:textCursorDrawable="@drawable/account_edit_cursor_bg"
+                android:textSize="@dimen/edit_normal_font" />
+
+
+            
+            <RelativeLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_dimen_50"
+                android:layout_marginTop="5dp">
+
+
+                <ImageView
+                    android:id="@+id/toggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/account_login_eye_close"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="@dimen/common_dimen_1"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="200dp"
+                android:layout_height="62dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/account_hint_password"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:paddingRight="@dimen/common_dimen_35"
+                android:singleLine="true"
+                android:textColor="@color/common_323232"
+                android:textColorHint="@color/common_BCBDD0"
+                android:textCursorDrawable="@drawable/account_edit_cursor_bg"
+                android:textSize="@dimen/edit_normal_font" />
+
+
+            </RelativeLayout>
+
+    >
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
