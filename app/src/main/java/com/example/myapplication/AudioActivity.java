@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,18 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class AudioActivity extends AppCompatActivity {
+
     public ImageButton myButton;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -27,24 +27,27 @@ public class HomeActivity extends AppCompatActivity {
     private ArrayList<String> items;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);{
+        setContentView(R.layout.activity_main2);
+
+        {
 
             BottomNavigationView bottomNavigationView = findViewById(R.id.botoom_navigation);
 
-            bottomNavigationView.setSelectedItemId(R.id.dashbord);
+            bottomNavigationView.setSelectedItemId(R.id.home);
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.dashbord:
-
+                            startActivities(new Intent[]{new Intent(getApplicationContext(), HomeActivity.class)});
+                            overridePendingTransition(0,0);
                             return true;
                         case R.id.home:
-                            startActivities(new Intent[]{new Intent(getApplicationContext(), AudioActivity.class)});
-                            overridePendingTransition(0,0);
+
                             return true;
 
                         case R.id.about:
@@ -57,49 +60,34 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
 
-        /*    TextView myTextView = findViewById(R.id.text);
-            myTextView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Do something when the TextView is clicked
-                    startActivities(new Intent[]{new Intent(HomeActivity.this, ActivityRecord.class)});
-                    overridePendingTransition(0,0);
-
-                }
-            });*/
-
-
         }
 
-
-        recyclerView = findViewById(R.id.recyclerview_1);
+        recyclerView = findViewById(R.id.recyclerview_2);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         items = new ArrayList<>();
-        items.add("Hello teacher.");
-        items.add("Hello boss.");
-        items.add("You are welcome.");
-        items.add("You are welcome.");
-        items.add("Nice day.");
-        items.add("Good idea.");items.add("Run fast.");
-        items.add("No, I don’t know.");
-        items.add("Hello teacher.");
-        items.add("Hello boss.");
-        items.add("You are welcome.");
-        items.add("You are welcome.");
-        items.add("Nice day.");
-        items.add("Good idea.");items.add("Run fast.");
-        items.add("No, I don’t know.");
+        items.add("20221111-content2.wav");
+        items.add("20221111-content3.wav");
+        items.add("20221111-content4.wav");
+        items.add("20221111-content5.wav");
+        items.add("20221111-content6.wav");
+        items.add("20221111-content7.wav");items.add("20221111-content8.wav");
+        items.add("20221111-content9.wav");
+        items.add("20221111-content10.wav");
+        items.add("20221111-content11.wav");
+        items.add("20221111-content12.wav");
+        items.add("20221111-content13.wav");
+        items.add("20221111-content14.wav");
+        items.add("20221111-content15.wav");items.add("20221111-content16.wav");
+        items.add("20221111-content217.wav");
         adapter = new myAdapter(items);
         recyclerView.setAdapter(adapter);
     }
 
 }
-
-
-class myAdapter<myButton> extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
+class MyAdapter<myButton> extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private ArrayList<String> items;
 
@@ -108,18 +96,17 @@ class myAdapter<myButton> extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
         MyViewHolder(View view) {
             super(view);
-            textView = view.findViewById(R.id.text);
+            textView = view.findViewById(R.id.text1);
         }
     }
-
-    myAdapter(ArrayList<String> items) {
+    MyAdapter(ArrayList<String> items) {
         this.items = items;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.waiting_list, parent, false);
+                .inflate(R.layout.audio_list, parent, false);
 
         return new MyViewHolder(view);
     }
@@ -135,7 +122,30 @@ class myAdapter<myButton> extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         return items.size();
     }
 
-    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

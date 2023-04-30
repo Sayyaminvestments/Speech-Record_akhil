@@ -4,12 +4,16 @@ import android.annotation.SuppressLint;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class LogoutActivity extends AppCompatActivity {
 
@@ -25,6 +29,30 @@ public class LogoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.botoom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.about);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.dashbord:
+                        startActivities(new Intent[]{new Intent(getApplicationContext(), HomeActivity.class)});
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.home:
+                        startActivities(new Intent[]{new Intent(getApplicationContext(), AudioActivity.class)});
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.about:
+
+                        return true;
+                }
+
+                return false;
+            }
+        });
 
         button = findViewById(R.id.button_logout);
 
@@ -35,50 +63,5 @@ public class LogoutActivity extends AppCompatActivity {
             finish();
         });
 
-        ImageButton myImageButton = findViewById(R.id.rec_btn);
-        myImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LogoutActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        ImageButton ImageButton = findViewById(R.id.act_btn);
-        ImageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LogoutActivity.this, LogoutActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-    }
-    /* ImageButton myButton = findViewById(R.id.record);
-
-
-        myButton.setOnClickListener(view -> {
-            Intent intent = new Intent(LogoutActivity.this, HomeActivity.class);
-            startActivity(intent);
-        });
-
-       imageButton1 = new ImageButton(this);
-        imageButton2 = new ImageButton(this);
-
-        imageButton1.setImageResource(R.drawable.record_shade);
-        imageButton2.setImageResource(R.drawable.audio_shade);
-
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(100, 100);
-        imageButton1.setLayoutParams(params);
-        imageButton2.setLayoutParams(params);
-
-        LinearLayout linearLayout = findViewById(R.id.linear_layout);
-        linearLayout.addView(imageButton1);
-        linearLayout.addView(imageButton2);
-
-
-*/
-
-    }
+    }}
 

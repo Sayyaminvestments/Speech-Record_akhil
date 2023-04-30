@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home"
-        android:title="Home"
+
+    <item
+        android:id="@+id/dashbord"
+        android:title="Record"
         android:icon="@drawable/major_tab_home"/>
-    <item android:id="@+id/notification"
-        android:title="Notification"
+    <item
+        android:id="@+id/home"
+        android:title="Audio"
         android:icon="@drawable/audio_tab_home"/>
-    <item android:id="@+id/settings"
-        android:title="Settings"
+    <item
+        android:id="@+id/about"
+        android:title="Account"
         android:icon="@drawable/major_tab_account"/>
+
 </menu>

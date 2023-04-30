@@ -5,28 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    tools:context=".HomeActivity">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".AudioActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/botoom_navigation"
-        app:itemBackground="@color/white"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent">
 
-        />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/botoom_navigation"
+            app:itemBackground="@color/white"
+            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selector"
+            app:menu="@menu/menu_navigation"
+            android:layout_alignParentBottom="true"
+
+            />
 
 
-
-
-</RelativeLayout>
-    
+    </RelativeLayout>
 
 
 
@@ -49,7 +47,7 @@
                 android:layout_marginTop="@dimen/common_dimen_58"
                 android:layout_marginBottom="@dimen/common_dimen_24"
                 android:gravity="center"
-                android:text="@string/home_recording_list"
+                android:text="Audio"
                 android:textColor="@color/black"
                 android:textSize="@dimen/common_size_16" />
 
@@ -109,14 +107,6 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview_1"
-                android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:layout_marginTop="175dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="15dp"/>
-
-            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_2"
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
@@ -126,5 +116,6 @@
 
         </RelativeLayout>
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
